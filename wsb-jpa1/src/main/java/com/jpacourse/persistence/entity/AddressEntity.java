@@ -1,26 +1,29 @@
 package com.jpacourse.persistence.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "ADDRESS")
+@Table(name = "address")
 public class AddressEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@Column(nullable = false)
 	private String city;
 
+	@Column(nullable = false)
 	private String addressLine1;
 
+	@Column(nullable = true)
 	private String addressLine2;
 
+	@Column(nullable = false)
 	private String postalCode;
+
+	// Jednokierunkowa relacja (dziecko od Patient)
+	// Jednokierunkowa relacja (dziecko od Doctor)
 
 	public Long getId() {
 		return id;
@@ -61,5 +64,4 @@ public class AddressEntity {
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
 	}
-
 }
