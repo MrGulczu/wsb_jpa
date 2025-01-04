@@ -36,8 +36,12 @@ public class PatientEntity {
 	private AddressEntity address;
 
 	// Dwukierunkowa relacja
-	@OneToMany(mappedBy = "patient", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "patient", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
 	private Collection<VisitEntity> visits;
+
+	// Dodatkowe pole
+	@Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT FALSE")
+	private Boolean isAllergic;
 
 	public Long getId() {
 		return id;
@@ -107,6 +111,10 @@ public class PatientEntity {
 		return visits;
 	}
 
+	public void setVisits(Collection<VisitEntity> visits) {
+		this.visits = visits;
+	}
+
 	public void addVisit(VisitEntity visit) {
 		visits.add(visit);
 
@@ -117,5 +125,13 @@ public class PatientEntity {
 		visits.remove(visit);
 
 		visit.setPatient(null);
+	}
+
+	public Boolean getIsAllergic() {
+		return isAllergic;
+	}
+
+	public void setIsAllergic(Boolean isAllergic) {
+		this.isAllergic = isAllergic;
 	}
 }
