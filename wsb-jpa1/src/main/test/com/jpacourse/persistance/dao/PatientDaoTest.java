@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -138,5 +139,40 @@ public class PatientDaoTest {
         assertEquals("Horbacz", patient3.getLastName());
         assertEquals("PAT005", patient3.getPatientNumber());
         assertThat(patient3.getIsAllergic()).isEqualTo(isAllergy);
+    }
+
+    @Test
+    public void testConcurrentModification() throws InterruptedException {
+        // given
+        Long patientId = 2L;
+
+        Thread thread1 = new Thread(() -> {
+            PatientEntity patient1 = patientDao.findOne(patientId);
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            patient1.setTelephoneNumber("+48 123 123 123");
+
+            // then
+            assertThrows(ObjectOptimisticLockingFailureException.class, () -> {
+                patientDao.update(patient1);
+            });
+        });
+
+        Thread thread2 = new Thread(() -> {
+            PatientEntity patient2 = patientDao.findOne(patientId);
+
+            patient2.setTelephoneNumber("+48 987 654 321");
+            patientDao.update(patient2);
+        });
+
+        // when
+        thread1.start();
+        thread2.start();
+
+        thread1.join();
+        thread2.join();
     }
 }
