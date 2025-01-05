@@ -19,11 +19,11 @@ INSERT INTO address (id, city, address_line1, address_line2, postal_code) VALUES
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (1, 'Ida', 'Foremniak', '+48 32 118 79 81', 'halamaaurelia@hotmail.com', 'DOC001', 'Ortopedia', 12);
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (2, 'Paweł', 'Godyń', '720 803 549', 'nelaufniarz@spoldzielnia.net', 'DOC002', 'Dermatologia', 8);
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (3, 'Marianna', 'Makar', '+48 605 699 443', 'jfijalek@gmail.com', 'DOC003', 'Ortopedia', 14);
-INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (4, 'Miłosz', 'Murach', '+48 792 965 495', 'hjeszka@gabinety.org', 'DOC004', 'Pediatria', 11);
-INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (5, 'Kornel', 'Domżał', '+48 787 266 361', 'hdarlak@onet.pl', 'DOC005', 'Dermatologia', 7);
-INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (6, 'Elżbieta', 'Cofała', '722 956 540', 'jan54@fundacja.org', 'DOC006', 'Kardiologia', 1);
-INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (7, 'Patryk', 'Ważna', '780 661 550', 'klarazasepa@ppuh.com', 'DOC007', 'Ortopedia', 3);
-INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (8, 'Józef', 'Czerniec', '32 747 32 75', 'uwiatrak@gmail.com', 'DOC008', 'Kardiologia', 13);
+INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (4, 'Milosz', 'Murach', '+48 792 965 495', 'hjeszka@gabinety.org', 'DOC004', 'Pediatria', 11);
+INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (5, 'Kornel', 'Domzal', '+48 787 266 361', 'hdarlak@onet.pl', 'DOC005', 'Dermatologia', 7);
+INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (6, 'Elzbieta', 'Cofala', '722 956 540', 'jan54@fundacja.org', 'DOC006', 'Kardiologia', 1);
+INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (7, 'Patryk', 'Wazna', '780 661 550', 'klarazasepa@ppuh.com', 'DOC007', 'Ortopedia', 3);
+INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (8, 'Jozef', 'Czerniec', '32 747 32 75', 'uwiatrak@gmail.com', 'DOC008', 'Kardiologia', 13);
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (9, 'Juliusz', 'Wyciszkiewicz', '+48 692 137 758', 'swigonksawery@hotmail.com', 'DOC009', 'Dermatologia', 15);
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (10, 'Olaf', 'Kusek', '+48 696 838 877', 'grygokacper@o2.pl', 'DOC010', 'Dermatologia', 2);
 
@@ -31,8 +31,8 @@ INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_n
 INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id, is_allergic) VALUES (1, 'Ryszard', 'Roszko', '+48 885 598 633', 'muellerrobert@onet.pl', 'PAT001', '1996-05-12', 4, true);
 INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id, is_allergic) VALUES (2, 'Daniel', 'Ryfa', '32 569 75 88', 'klarakozok@interia.pl', 'PAT002', '1989-06-07', 6, false);
 INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id, is_allergic) VALUES (3, 'Ada', 'Halama', '+48 505 951 799', 'korneliasiedlik@hotmail.com', 'PAT003', '1970-05-22', 5, true);
-INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id, is_allergic) VALUES (4, 'Roksana', 'Perczak', '798 940 259', 'adawenzel@o2.pl', 'PAT004', '1973-09-15', 10, false);
-INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id, is_allergic) VALUES (5, 'Jędrzej', 'Horbacz', '+48 732 659 176', 'skwiraantoni@fundacja.pl', 'PAT005', '1975-01-28', 9, true);
+INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id, is_allergic) VALUES (4, 'Roksana', 'Horbacz', '798 940 259', 'adawenzel@o2.pl', 'PAT004', '1973-09-15', 10, false);
+INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id, is_allergic) VALUES (5, 'Jedrzej', 'Horbacz', '+48 732 659 176', 'skwiraantoni@fundacja.pl', 'PAT005', '1975-01-28', 9, true);
 
 -- Visits
 INSERT INTO visit (id, description, time, doctor_id, patient_id) VALUES (1, 'Wizyta_1', '2024-11-15 21:29:31', 7, 2);

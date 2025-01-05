@@ -37,6 +37,30 @@ public final class PatientMapper
         return patientTO;
     }
 
+    public static PatientTO mapForVisitToTO(final PatientEntity patientEntity)
+    {
+        if (patientEntity == null) {
+            return null;
+        }
+
+        final PatientTO patientTO = new PatientTO();
+        patientTO.setId(patientEntity.getId());
+        patientTO.setAddress(AddressMapper.mapToTO(patientEntity.getAddress()));
+        patientTO.setPatientNumber(patientEntity.getPatientNumber());
+        patientTO.setEmail(patientEntity.getEmail());
+        patientTO.setDateOfBirth(patientEntity.getDateOfBirth());
+        patientTO.setLastName(patientEntity.getLastName());
+        patientTO.setFirstName(patientEntity.getFirstName());
+        patientTO.setTelephoneNumber(patientEntity.getTelephoneNumber());
+        patientTO.setAllergic(patientEntity.getIsAllergic());
+
+        if (patientEntity.getAddress() != null) {
+            patientTO.setAddress(AddressMapper.mapToTO(patientEntity.getAddress()));
+        }
+
+        return patientTO;
+    }
+
     public static PatientEntity mapToEntity(final PatientTO patientTO)
     {
         if (patientTO == null) {

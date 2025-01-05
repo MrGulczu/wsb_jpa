@@ -2,9 +2,9 @@ package com.jpacourse.persistence.dao;
 
 import com.jpacourse.persistence.entity.VisitEntity;
 
-import java.util.List;
+import java.util.Collection;
 
 public interface VisitDao extends Dao<VisitEntity, Long>
 {
-    List<VisitEntity> findByPatient(Long patientId);
+    Collection<VisitEntity> findByPatient(Long patientId);
 }
